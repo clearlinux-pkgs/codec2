@@ -4,7 +4,7 @@
 #
 Name     : codec2
 Version  : 0.8.1
-Release  : 2
+Release  : 3
 URL      : http://deb.debian.org/debian/pool/main/c/codec2/codec2_0.8.1.orig.tar.xz
 Source0  : http://deb.debian.org/debian/pool/main/c/codec2/codec2_0.8.1.orig.tar.xz
 Summary  : A speech codec for 2400 bit/s and below
@@ -18,10 +18,10 @@ BuildRequires : glibc-dev
 BuildRequires : pkgconfig(samplerate)
 BuildRequires : pkgconfig(speexdsp)
 BuildRequires : subversion
-Patch1: single-definition-of-quiskFilt120t480
-Patch2: fsk_fft_api
-Patch3: bump-soversion-to-0.8.1
-Patch4: modern-cmake-targets
+Patch1: single-definition-of-quiskFilt120t480.patch
+Patch2: fsk_fft_api.patch
+Patch3: bump-soversion-to-0.8.1.patch
+Patch4: modern-cmake-targets.patch
 
 %description
 --------------
@@ -78,7 +78,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1556921288
+export SOURCE_DATE_EPOCH=1556921760
 mkdir -p clr-build
 pushd clr-build
 export LDFLAGS="${LDFLAGS} -fno-lto"
@@ -87,7 +87,7 @@ make  %{?_smp_mflags} VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1556921288
+export SOURCE_DATE_EPOCH=1556921760
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/codec2
 cp COPYING %{buildroot}/usr/share/package-licenses/codec2/COPYING
