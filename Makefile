@@ -1,5 +1,5 @@
 PKG_NAME := codec2
-URL = https://sourceforge.net/code-snapshots/svn/f/fr/freetel/code/freetel-code-r3650-codec2-branches-0.8.zip
+URL = http://deb.debian.org/debian/pool/main/c/codec2/codec2_0.8.1.orig.tar.xz
 ARCHIVES = 
 
 include ../common/Makefile.common
