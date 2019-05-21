@@ -1,5 +1,5 @@
 PKG_NAME := codec2
-URL = http://deb.debian.org/debian/pool/main/c/codec2/codec2_0.8.1.orig.tar.xz
+URL = https://hobbes1069.fedorapeople.org/freetel/codec2/codec2-0.8.1.tar.xz
 ARCHIVES = 
 
 include ../common/Makefile.common
