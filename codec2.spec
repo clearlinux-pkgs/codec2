@@ -4,7 +4,7 @@
 #
 Name     : codec2
 Version  : 0.8.1
-Release  : 3
+Release  : 4
 URL      : http://deb.debian.org/debian/pool/main/c/codec2/codec2_0.8.1.orig.tar.xz
 Source0  : http://deb.debian.org/debian/pool/main/c/codec2/codec2_0.8.1.orig.tar.xz
 Summary  : A speech codec for 2400 bit/s and below
