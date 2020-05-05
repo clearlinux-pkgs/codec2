@@ -14,7 +14,7 @@ Author: A. Maitland Bottoms <bottoms@debian.org>
  #define MODE_2FSK 2
 --- a/src/CMakeLists.txt
 +++ b/src/CMakeLists.txt
-@@ -241,6 +241,7 @@
+@@ -234,6 +234,7 @@
      codec2_cohpsk.h
      codec2_fm.h
      codec2_ofdm.h

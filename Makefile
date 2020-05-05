@@ -1,5 +1,5 @@
 PKG_NAME := codec2
-URL = https://hobbes1069.fedorapeople.org/freetel/codec2/codec2-0.8.1.tar.xz
+URL = https://github.com/drowe67/codec2/archive/v0.9.2/codec2-0.9.2.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common

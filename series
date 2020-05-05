@@ -1,4 +1,2 @@
-single-definition-of-quiskFilt120t480.patch
 fsk_fft_api.patch
-bump-soversion-to-0.8.1.patch
 modern-cmake-targets.patch
