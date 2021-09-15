@@ -4,7 +4,7 @@
 #
 Name     : codec2
 Version  : 1.0.0
-Release  : 6
+Release  : 7
 URL      : https://github.com/drowe67/codec2/archive/v1.0.0/codec2-1.0.0.tar.gz
 Source0  : https://github.com/drowe67/codec2/archive/v1.0.0/codec2-1.0.0.tar.gz
 Summary  : A speech codec for 2400 bit/s and below
@@ -75,7 +75,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1631644279
+export SOURCE_DATE_EPOCH=1631666733
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -86,6 +86,34 @@ export CXXFLAGS="$CXXFLAGS -fno-lto "
 %cmake ..
 make  %{?_smp_mflags}
 popd
+mkdir -p clr-build-avx2
+pushd clr-build-avx2
+export GCC_IGNORE_WERROR=1
+export CFLAGS="$CFLAGS -O3 -fno-lto -march=haswell "
+export FCFLAGS="$FFLAGS -O3 -fno-lto -march=haswell "
+export FFLAGS="$FFLAGS -O3 -fno-lto -march=haswell "
+export CXXFLAGS="$CXXFLAGS -O3 -fno-lto -march=haswell "
+export CFLAGS="$CFLAGS -march=haswell -m64"
+export CXXFLAGS="$CXXFLAGS -march=haswell -m64"
+export FFLAGS="$FFLAGS -march=haswell -m64"
+export FCFLAGS="$FCFLAGS -march=haswell -m64"
+%cmake ..
+make  %{?_smp_mflags}
+popd
+mkdir -p clr-build-avx512
+pushd clr-build-avx512
+export GCC_IGNORE_WERROR=1
+export CFLAGS="$CFLAGS -O3 -fno-lto -march=skylake-avx512 "
+export FCFLAGS="$FFLAGS -O3 -fno-lto -march=skylake-avx512 "
+export FFLAGS="$FFLAGS -O3 -fno-lto -march=skylake-avx512 "
+export CXXFLAGS="$CXXFLAGS -O3 -fno-lto -march=skylake-avx512 "
+export CFLAGS="$CFLAGS -march=skylake-avx512 -m64 "
+export CXXFLAGS="$CXXFLAGS -march=skylake-avx512 -m64 "
+export FFLAGS="$FFLAGS -march=skylake-avx512 -m64 "
+export FCFLAGS="$FCFLAGS -march=skylake-avx512 -m64 "
+%cmake ..
+make  %{?_smp_mflags}
+popd
 
 %check
 export LANG=C.UTF-8
@@ -93,12 +121,22 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 cd clr-build; make test || :
+cd ../clr-build-avx2;
+make test || : || :
+cd ../clr-build-avx512;
+make test || : || :
 
 %install
-export SOURCE_DATE_EPOCH=1631644279
+export SOURCE_DATE_EPOCH=1631666733
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/codec2
 cp %{_builddir}/codec2-1.0.0/COPYING %{buildroot}/usr/share/package-licenses/codec2/af54222a16839088fb1ffd5da88c1713472babc4
+pushd clr-build-avx512
+%make_install_avx512  || :
+popd
+pushd clr-build-avx2
+%make_install_avx2  || :
+popd
 pushd clr-build
 %make_install
 popd
@@ -116,6 +154,24 @@ popd
 /usr/bin/fdmdv_put_test_bits
 /usr/bin/fm_demod
 /usr/bin/fsk_mod
+/usr/bin/haswell/avx512_1/c2dec
+/usr/bin/haswell/avx512_1/c2enc
+/usr/bin/haswell/avx512_1/fdmdv_demod
+/usr/bin/haswell/avx512_1/fdmdv_get_test_bits
+/usr/bin/haswell/avx512_1/fdmdv_mod
+/usr/bin/haswell/avx512_1/fdmdv_put_test_bits
+/usr/bin/haswell/avx512_1/fm_demod
+/usr/bin/haswell/avx512_1/fsk_mod
+/usr/bin/haswell/avx512_1/insert_errors
+/usr/bin/haswell/c2dec
+/usr/bin/haswell/c2enc
+/usr/bin/haswell/fdmdv_demod
+/usr/bin/haswell/fdmdv_get_test_bits
+/usr/bin/haswell/fdmdv_mod
+/usr/bin/haswell/fdmdv_put_test_bits
+/usr/bin/haswell/fm_demod
+/usr/bin/haswell/fsk_mod
+/usr/bin/haswell/insert_errors
 /usr/bin/insert_errors
 
 %files dev
@@ -135,11 +191,15 @@ popd
 /usr/lib64/cmake/codec2/Codec2Config.cmake
 /usr/lib64/cmake/codec2/Codec2Targets-relwithdebinfo.cmake
 /usr/lib64/cmake/codec2/Codec2Targets.cmake
+/usr/lib64/haswell/avx512_1/libcodec2.so
+/usr/lib64/haswell/libcodec2.so
 /usr/lib64/libcodec2.so
 /usr/lib64/pkgconfig/codec2.pc
 
 %files lib
 %defattr(-,root,root,-)
+/usr/lib64/haswell/avx512_1/libcodec2.so.1.0
+/usr/lib64/haswell/libcodec2.so.1.0
 /usr/lib64/libcodec2.so.1.0
 
 %files license
