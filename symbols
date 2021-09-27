@@ -217,6 +217,7 @@ libcodec2.so.1.0:freedv_ofdm_voice_open
 libcodec2.so.1.0:freedv_open
 libcodec2.so.1.0:freedv_open_advanced
 libcodec2.so.1.0:freedv_pack
+libcodec2.so.1.0:freedv_passthrough_gain
 libcodec2.so.1.0:freedv_rawdata_from_codec_frames
 libcodec2.so.1.0:freedv_rawdatacomprx
 libcodec2.so.1.0:freedv_rawdatacomptx
@@ -232,6 +233,7 @@ libcodec2.so.1.0:freedv_set_callback_data
 libcodec2.so.1.0:freedv_set_callback_error_pattern
 libcodec2.so.1.0:freedv_set_callback_protocol
 libcodec2.so.1.0:freedv_set_callback_txt
+libcodec2.so.1.0:freedv_set_callback_txt_sym
 libcodec2.so.1.0:freedv_set_carrier_ampl
 libcodec2.so.1.0:freedv_set_clip
 libcodec2.so.1.0:freedv_set_data_header
@@ -303,8 +305,10 @@ libcodec2.so.1.0:golay23_decode
 libcodec2.so.1.0:golay23_encode
 libcodec2.so.1.0:golay23_init
 libcodec2.so.1.0:golay23_syndrome
+libcodec2.so.1.0:gp_deinterleave_bits
 libcodec2.so.1.0:gp_deinterleave_comp
 libcodec2.so.1.0:gp_deinterleave_float
+libcodec2.so.1.0:gp_interleave_bits
 libcodec2.so.1.0:gp_interleave_comp
 libcodec2.so.1.0:gp_interleave_float
 libcodec2.so.1.0:hanning_window
@@ -383,6 +387,7 @@ libcodec2.so.1.0:ofdm_demod
 libcodec2.so.1.0:ofdm_demod_shorts
 libcodec2.so.1.0:ofdm_destroy
 libcodec2.so.1.0:ofdm_disassemble_qpsk_modem_packet
+libcodec2.so.1.0:ofdm_disassemble_qpsk_modem_packet_with_text_amps
 libcodec2.so.1.0:ofdm_esno_est_calc
 libcodec2.so.1.0:ofdm_extract_uw
 libcodec2.so.1.0:ofdm_generate_payload_data_bits
@@ -439,7 +444,6 @@ libcodec2.so.1.0:qpsk_symbols_to_bits
 libcodec2.so.1.0:qpsk_to_bits
 libcodec2.so.1.0:quantise
 libcodec2.so.1.0:quantise_WoE
-libcodec2.so.1.0:quantise_init
 libcodec2.so.1.0:quisk_ccfFilter
 libcodec2.so.1.0:quisk_cfInterpDecim
 libcodec2.so.1.0:quisk_cfTune
@@ -447,13 +451,19 @@ libcodec2.so.1.0:quisk_filt_cfInit
 libcodec2.so.1.0:quisk_filt_destroy
 libcodec2.so.1.0:rate_Fs_rx_processing
 libcodec2.so.1.0:rate_K_mbest_encode
+libcodec2.so.1.0:reliable_text_create
+libcodec2.so.1.0:reliable_text_destroy
+libcodec2.so.1.0:reliable_text_get_freedv_obj
+libcodec2.so.1.0:reliable_text_reset
+libcodec2.so.1.0:reliable_text_set_string
+libcodec2.so.1.0:reliable_text_unlink_from_freedv
+libcodec2.so.1.0:reliable_text_use_with_freedv
 libcodec2.so.1.0:resample_const_rate_f
 libcodec2.so.1.0:resample_rate_L
 libcodec2.so.1.0:run_ldpc_decoder
 libcodec2.so.1.0:rx_est_freq_offset
 libcodec2.so.1.0:rx_est_timing
 libcodec2.so.1.0:rx_filter
-libcodec2.so.1.0:rx_filter_coh
 libcodec2.so.1.0:rxdec_filter
 libcodec2.so.1.0:sample_log_amp
 libcodec2.so.1.0:sample_phase
@@ -477,9 +487,11 @@ libcodec2.so.1.0:update_ct_symb_buf
 libcodec2.so.1.0:varicode_decode
 libcodec2.so.1.0:varicode_decode1
 libcodec2.so.1.0:varicode_decode2
+libcodec2.so.1.0:varicode_decode3
 libcodec2.so.1.0:varicode_decode_init
 libcodec2.so.1.0:varicode_encode
 libcodec2.so.1.0:varicode_encode1
 libcodec2.so.1.0:varicode_encode2
+libcodec2.so.1.0:varicode_encode3
 libcodec2.so.1.0:varicode_set_code_num
 libcodec2.so.1.0:weight
