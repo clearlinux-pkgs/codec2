@@ -112,8 +112,12 @@ libcodec2.so.1.0:fdm_downconvert_coh
 libcodec2.so.1.0:fdm_upconvert
 libcodec2.so.1.0:fdmdv_16_to_8
 libcodec2.so.1.0:fdmdv_16_to_8_short
+libcodec2.so.1.0:fdmdv_48_to_8
+libcodec2.so.1.0:fdmdv_48_to_8_short
 libcodec2.so.1.0:fdmdv_8_to_16
 libcodec2.so.1.0:fdmdv_8_to_16_short
+libcodec2.so.1.0:fdmdv_8_to_48
+libcodec2.so.1.0:fdmdv_8_to_48_short
 libcodec2.so.1.0:fdmdv_bits_per_frame
 libcodec2.so.1.0:fdmdv_create
 libcodec2.so.1.0:fdmdv_demod
@@ -354,6 +358,7 @@ libcodec2.so.1.0:make_synthesis_window
 libcodec2.so.1.0:mbest_create
 libcodec2.so.1.0:mbest_destroy
 libcodec2.so.1.0:mbest_insert
+libcodec2.so.1.0:mbest_precompute_weight
 libcodec2.so.1.0:mbest_print
 libcodec2.so.1.0:mbest_search
 libcodec2.so.1.0:mbest_search450
