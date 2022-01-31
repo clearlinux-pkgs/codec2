@@ -4,7 +4,7 @@
 #
 Name     : codec2
 Version  : 1.03
-Release  : 13
+Release  : 14
 URL      : https://github.com/drowe67/codec2/archive/v1.03/codec2-1.03.tar.gz
 Source0  : https://github.com/drowe67/codec2/archive/v1.03/codec2-1.03.tar.gz
 Summary  : A speech codec for 2400 bit/s and below
