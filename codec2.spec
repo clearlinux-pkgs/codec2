@@ -4,7 +4,7 @@
 #
 Name     : codec2
 Version  : 1.03
-Release  : 15
+Release  : 16
 URL      : https://github.com/drowe67/codec2/archive/v1.03/codec2-1.03.tar.gz
 Source0  : https://github.com/drowe67/codec2/archive/v1.03/codec2-1.03.tar.gz
 Summary  : A speech codec for 2400 bit/s and below
@@ -86,7 +86,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1656011574
+export SOURCE_DATE_EPOCH=1656098311
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -138,7 +138,7 @@ cd ../clr-build-avx512;
 make test || : || :
 
 %install
-export SOURCE_DATE_EPOCH=1656011574
+export SOURCE_DATE_EPOCH=1656098311
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/codec2
 cp %{_builddir}/codec2-1.03/COPYING %{buildroot}/usr/share/package-licenses/codec2/af54222a16839088fb1ffd5da88c1713472babc4
