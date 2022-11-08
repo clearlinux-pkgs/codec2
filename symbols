@@ -84,6 +84,7 @@ libcodec2.so.1.0:compute_weights
 libcodec2.so.1.0:compute_weights2
 libcodec2.so.1.0:corr_with_pilots
 libcodec2.so.1.0:count_errors
+libcodec2.so.1.0:count_errors_protection_mode
 libcodec2.so.1.0:count_uncoded_errors
 libcodec2.so.1.0:de_emp
 libcodec2.so.1.0:decode_Wo
@@ -257,6 +258,7 @@ libcodec2.so.1.0:freedv_set_total_bits
 libcodec2.so.1.0:freedv_set_total_bits_coded
 libcodec2.so.1.0:freedv_set_total_packet_errors
 libcodec2.so.1.0:freedv_set_total_packets
+libcodec2.so.1.0:freedv_set_tuning_range
 libcodec2.so.1.0:freedv_set_tx_amp
 libcodec2.so.1.0:freedv_set_tx_bpf
 libcodec2.so.1.0:freedv_set_varicode_code_num
@@ -339,6 +341,7 @@ libcodec2.so.1.0:ldpc_codes_find
 libcodec2.so.1.0:ldpc_codes_list
 libcodec2.so.1.0:ldpc_codes_num
 libcodec2.so.1.0:ldpc_codes_setup
+libcodec2.so.1.0:ldpc_decode_frame
 libcodec2.so.1.0:ldpc_encode_frame
 libcodec2.so.1.0:ldpc_print_info
 libcodec2.so.1.0:levinson_durbin
@@ -351,7 +354,7 @@ libcodec2.so.1.0:lsp_bits
 libcodec2.so.1.0:lsp_pred_vq_bits
 libcodec2.so.1.0:lsp_to_lpc
 libcodec2.so.1.0:lspd_bits
-libcodec2.so.1.0:lspjvm_quantise
+libcodec2.so.1.0:lspjmv_quantise
 libcodec2.so.1.0:mag_to_phase
 libcodec2.so.1.0:make_analysis_window
 libcodec2.so.1.0:make_synthesis_window
@@ -469,6 +472,7 @@ libcodec2.so.1.0:run_ldpc_decoder
 libcodec2.so.1.0:rx_est_freq_offset
 libcodec2.so.1.0:rx_est_timing
 libcodec2.so.1.0:rx_filter
+libcodec2.so.1.0:rx_filter_coh
 libcodec2.so.1.0:rxdec_filter
 libcodec2.so.1.0:sample_log_amp
 libcodec2.so.1.0:sample_phase
