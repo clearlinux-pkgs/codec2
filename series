@@ -1,2 +1,2 @@
 fsk_fft_api.patch
-modern-cmake-targets.patch
+#modern-cmake-targets.patch
