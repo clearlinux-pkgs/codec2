@@ -4,10 +4,10 @@
 # Using build pattern: cmake
 #
 Name     : codec2
-Version  : 1.1.0
-Release  : 27
-URL      : https://github.com/drowe67/codec2/archive/v1.1.0/codec2-1.1.0.tar.gz
-Source0  : https://github.com/drowe67/codec2/archive/v1.1.0/codec2-1.1.0.tar.gz
+Version  : 1.1.1
+Release  : 28
+URL      : https://github.com/drowe67/codec2/archive/v1.1.1/codec2-1.1.1.tar.gz
+Source0  : https://github.com/drowe67/codec2/archive/v1.1.1/codec2-1.1.1.tar.gz
 Summary  : A speech codec for 2400 bit/s and below
 Group    : Development/Tools
 License  : LGPL-2.1
@@ -57,16 +57,16 @@ license components for the codec2 package.
 
 
 %prep
-%setup -q -n codec2-1.1.0
-cd %{_builddir}/codec2-1.1.0
-%patch1 -p1
+%setup -q -n codec2-1.1.1
+cd %{_builddir}/codec2-1.1.1
+%patch -P 1 -p1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1685491472
+export SOURCE_DATE_EPOCH=1686782885
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -118,7 +118,7 @@ cd ../clr-build-avx512;
 make test || : || :
 
 %install
-export SOURCE_DATE_EPOCH=1685491472
+export SOURCE_DATE_EPOCH=1686782885
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/codec2
 cp %{_builddir}/codec2-%{version}/COPYING %{buildroot}/usr/share/package-licenses/codec2/af54222a16839088fb1ffd5da88c1713472babc4 || :
