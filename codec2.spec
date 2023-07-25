@@ -5,7 +5,7 @@
 #
 Name     : codec2
 Version  : 1.2.0
-Release  : 29
+Release  : 30
 URL      : https://github.com/drowe67/codec2/archive/1.2.0/codec2-1.2.0.tar.gz
 Source0  : https://github.com/drowe67/codec2/archive/1.2.0/codec2-1.2.0.tar.gz
 Summary  : A speech codec for 2400 bit/s and below
